@@ -1,0 +1,19 @@
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+RMSE before the jump & \multicolumn{4}{c}{Tuned} & \multicolumn{2}{c}{$c = 2$ fixed} & \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-7}
+Setting & one $R$ & input-dep. & robust & both & input-dep. & robust & Bayes \\
+\midrule
+10\% outliers, sd 10 (main) & 0.996 & 0.593 & 0.593 & 0.592 & 0.597 & 0.595 & 0.560 \\
+none (clean data) & 0.519 & 0.519 & 0.519 & 0.519 & 0.554 & 0.543 & 0.519 \\
+5\%, sd 10 & 0.844 & 0.560 & 0.560 & 0.558 & 0.573 & 0.567 & 0.541 \\
+20\%, sd 10 & 1.150 & 0.671 & 0.672 & 0.671 & 0.671 & 0.672 & 0.599 \\
+20\%, sd 3 & 0.682 & 0.622 & 0.625 & 0.622 & 0.626 & 0.628 & 0.605 \\
+10\%, sd 32 & 1.691 & 0.579 & 0.576 & 0.574 & 0.589 & 0.582 & 0.548 \\
+10\%, sd 10, test time only & 1.349 & 1.349 & 1.349 & 1.349 & 0.590 & 0.582 & 0.560 \\
+10\%, sd 10, in bursts & 1.000 & 0.701 & 0.667 & 0.666 & 0.739 & 0.660 & 0.588 \\
+10\%, sd 10, fast state & 1.657 & 1.026 & 1.014 & 1.002 & 1.079 & 1.026 & 0.940 \\
+\bottomrule
+\end{tabular}

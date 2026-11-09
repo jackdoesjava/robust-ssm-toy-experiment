@@ -1,0 +1,18 @@
+\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Change in RMSE & \multicolumn{2}{c}{Input-dependent $R_t$ computed from} \\
+\cmidrule(l){2-3}
+Setting & $y_1, \dots, y_t$ & $y_1, \dots, y_{t-1}$ \\
+\midrule
+10\% outliers, sd 10 (main) & $-0.0014 \pm 0.0008$ ($-\phantom{0}0.2\%$) & $-0.4849 \pm 0.0159$ ($-45.0\%$) \\
+none (clean data) & $+0.0000 \pm 0.0000$ ($+\phantom{0}0.0\%$) & $+0.0000 \pm 0.0000$ ($+\phantom{0}0.0\%$) \\
+5\%, sd 10 & $-0.0015 \pm 0.0006$ ($-\phantom{0}0.3\%$) & $-0.3351 \pm 0.0158$ ($-37.4\%$) \\
+20\%, sd 10 & $-0.0001 \pm 0.0005$ ($-\phantom{0}0.0\%$) & $-0.5694 \pm 0.0163$ ($-45.9\%$) \\
+20\%, sd 3 & $-0.0002 \pm 0.0007$ ($-\phantom{0}0.0\%$) & $-0.0603 \pm 0.0034$ ($-\phantom{0}8.8\%$) \\
+10\%, sd 32 & $-0.0049 \pm 0.0006$ ($-\phantom{0}0.9\%$) & $-1.5535 \pm 0.0470$ ($-72.9\%$) \\
+10\%, sd 10, test time only & $+0.0000 \pm 0.0000$ ($+\phantom{0}0.0\%$) & $+0.0000 \pm 0.0000$ ($+\phantom{0}0.0\%$) \\
+10\%, sd 10, in bursts & $-0.0353 \pm 0.0095$ ($-\phantom{0}5.0\%$) & $-0.4147 \pm 0.0297$ ($-38.9\%$) \\
+10\%, sd 10, fast state & $-0.0240 \pm 0.0028$ ($-\phantom{0}2.3\%$) & $-0.7124 \pm 0.0210$ ($-41.3\%$) \\
+\bottomrule
+\end{tabular}

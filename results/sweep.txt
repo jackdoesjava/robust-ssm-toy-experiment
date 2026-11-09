@@ -1,0 +1,262 @@
+== main: 10% outliers, sd 10 ==
+fitted: one R = 11.2 (max likelihood) or 3.55 (forecast CRPS); input-dependent R = 1.41, c = 2.5, k = 5; input-dependent with c = 2, k = 5 fixed: R = 1.41;
+        robust R = 1.41, c = 2.25; robust with c = 2 fixed: R = 1.41; robust + input-dependent R = 1.41, robust c = 3, noise c = 4, k = 3;
+        past only: input-dependent R = 3.55, c = inf (off), k = - (not used); robust + input-dependent R = 1.41, robust c = 2.25, noise c = inf (off), k = - (not used)
+
+                                           --------------------- before the jump ---------------------- -------- after the jump ---------
+filter                                              RMSE          CRPS  90% cover  50% cover  90% width  delay [95% CI]   RMSE (50 steps)
+Kalman, R = 1                               1.343 ±0.021  0.705 ±0.012      67.5%      34.9%       1.71        5 [4, 5]        1.53 ±0.07
+Kalman, one R (max likelihood)              0.996 ±0.016  0.560 ±0.009      90.0%      52.6%       3.31     19 [17, 21]        1.88 ±0.06
+Kalman, one R (forecast CRPS)               1.078 ±0.017  0.591 ±0.010      79.6%      43.7%       2.44       9 [8, 10]        1.56 ±0.06
+Kalman, input-dependent R_t                 0.593 ±0.006  0.333 ±0.003      91.1%      52.0%       2.01        8 [7, 8]        1.36 ±0.03
+Kalman, input-dependent R_t, c = 2 fixed    0.597 ±0.006  0.336 ±0.004      91.4%      52.3%       2.04        8 [8, 9]        1.42 ±0.03
+Kalman, input-dependent R_t (past only)     1.078 ±0.017  0.591 ±0.010      79.6%      43.7%       2.44       9 [8, 10]        1.56 ±0.06
+Robust, tuned                               0.593 ±0.006  0.334 ±0.004      90.9%      51.6%       2.00     10 [10, 11]        1.47 ±0.04
+Robust, c = 2 fixed                         0.595 ±0.007  0.335 ±0.004      91.1%      51.8%       2.01     11 [10, 11]        1.54 ±0.05
+Robust + input-dependent R_t                0.592 ±0.006  0.333 ±0.003      91.2%      52.0%       2.01       9 [9, 10]        1.40 ±0.04
+Robust + input-dependent R_t (past only)    0.593 ±0.006  0.334 ±0.004      90.9%      51.6%       2.00     10 [10, 11]        1.47 ±0.04
+Bayes filter (reference)                    0.560 ±0.005  0.315 ±0.003      90.0%      50.3%       1.83        7 [7, 7]        1.46 ±0.06
+
+Paired differences on the same test sequences (first minus second; mean and 95% interval):
+  Robust, tuned vs Kalman, one R (max likelihood): RMSE -0.4033 ±0.0139, CRPS -0.2266 ±0.0076, RMSE after the jump -0.4040 ±0.0467, delay -9 [-11, -7]
+  Robust, tuned vs Kalman, one R (forecast CRPS): RMSE -0.4849 ±0.0159, CRPS -0.2576 ±0.0091, RMSE after the jump -0.0886 ±0.0512, delay +1 [+0, +2]
+  Robust, tuned vs Kalman, input-dependent R_t: RMSE +0.0002 ±0.0011, CRPS +0.0002 ±0.0006, RMSE after the jump +0.1137 ±0.0126, delay +2 [+2, +3]
+  Robust + input-dependent R_t vs Kalman, input-dependent R_t: RMSE -0.0014 ±0.0008, CRPS -0.0008 ±0.0004, RMSE after the jump +0.0433 ±0.0072, delay +1 [+1, +2]
+  Robust + input-dependent R_t (past only) vs Kalman, input-dependent R_t (past only): RMSE -0.4849 ±0.0159, CRPS -0.2576 ±0.0091, RMSE after the jump -0.0886 ±0.0512, delay +1 [+0, +2]
+  Robust, c = 2 fixed vs Kalman, input-dependent R_t, c = 2 fixed: RMSE -0.0021 ±0.0013, CRPS -0.0012 ±0.0006, RMSE after the jump +0.1241 ±0.0151, delay +3 [+2, +3]
+  Robust, tuned vs Bayes filter (reference): RMSE +0.0327 ±0.0029, CRPS +0.0191 ±0.0015, RMSE after the jump +0.0149 ±0.0257, delay +3 [+3, +4]
+
+== clean data ==
+fitted: one R = 1 (max likelihood) or 1 (forecast CRPS); input-dependent R = 1, c = inf (off), k = - (not used); input-dependent with c = 2, k = 5 fixed: R = 1;
+        robust R = 1, c = inf (off); robust with c = 2 fixed: R = 0.891; robust + input-dependent R = 1, robust c = inf (off), noise c = inf (off), k = - (not used);
+        past only: input-dependent R = 1, c = 15, k = 3; robust + input-dependent R = 1, robust c = inf (off), noise c = 15, k = 3
+
+                                           --------------------- before the jump ---------------------- -------- after the jump ---------
+filter                                              RMSE          CRPS  90% cover  50% cover  90% width  delay [95% CI]   RMSE (50 steps)
+Kalman, R = 1                               0.519 ±0.004  0.294 ±0.002      90.0%      49.8%       1.71        5 [4, 5]        0.90 ±0.02
+Kalman, one R (max likelihood)              0.519 ±0.004  0.294 ±0.002      90.0%      49.8%       1.71        5 [4, 5]        0.90 ±0.02
+Kalman, one R (forecast CRPS)               0.519 ±0.004  0.294 ±0.002      90.0%      49.8%       1.71        5 [4, 5]        0.90 ±0.02
+Kalman, input-dependent R_t                 0.519 ±0.004  0.294 ±0.002      90.0%      49.8%       1.71        5 [4, 5]        0.90 ±0.02
+Kalman, input-dependent R_t, c = 2 fixed    0.554 ±0.006  0.313 ±0.003      90.3%      50.2%       1.84        7 [7, 7]        1.32 ±0.03
+Kalman, input-dependent R_t (past only)     0.520 ±0.004  0.294 ±0.002      90.1%      49.9%       1.72        5 [5, 5]        0.91 ±0.02
+Robust, tuned                               0.519 ±0.004  0.294 ±0.002      90.0%      49.8%       1.71        5 [4, 5]        0.90 ±0.02
+Robust, c = 2 fixed                         0.543 ±0.005  0.307 ±0.003      89.3%      48.9%       1.75        9 [8, 9]        1.38 ±0.04
+Robust + input-dependent R_t                0.519 ±0.004  0.294 ±0.002      90.0%      49.8%       1.71        5 [4, 5]        0.90 ±0.02
+Robust + input-dependent R_t (past only)    0.520 ±0.004  0.294 ±0.002      90.1%      49.9%       1.72        5 [5, 5]        0.91 ±0.02
+Bayes filter (reference)                    0.519 ±0.004  0.294 ±0.002      90.0%      49.8%       1.71        5 [4, 5]        0.90 ±0.02
+
+Paired differences on the same test sequences (first minus second; mean and 95% interval):
+  Robust, tuned vs Kalman, one R (max likelihood): RMSE +0.0000 ±0.0000, CRPS +0.0000 ±0.0000, RMSE after the jump +0.0000 ±0.0000, delay +0 [+0, +0]
+  Robust, tuned vs Kalman, one R (forecast CRPS): RMSE +0.0000 ±0.0000, CRPS +0.0000 ±0.0000, RMSE after the jump +0.0000 ±0.0000, delay +0 [+0, +0]
+  Robust, tuned vs Kalman, input-dependent R_t: RMSE +0.0000 ±0.0000, CRPS +0.0000 ±0.0000, RMSE after the jump +0.0000 ±0.0000, delay +0 [+0, +0]
+  Robust + input-dependent R_t vs Kalman, input-dependent R_t: RMSE +0.0000 ±0.0000, CRPS +0.0000 ±0.0000, RMSE after the jump +0.0000 ±0.0000, delay +0 [+0, +0]
+  Robust + input-dependent R_t (past only) vs Kalman, input-dependent R_t (past only): RMSE +0.0000 ±0.0000, CRPS +0.0000 ±0.0000, RMSE after the jump +0.0000 ±0.0000, delay +0 [+0, +0]
+  Robust, c = 2 fixed vs Kalman, input-dependent R_t, c = 2 fixed: RMSE -0.0111 ±0.0008, CRPS -0.0060 ±0.0004, RMSE after the jump +0.0617 ±0.0108, delay +2 [+1, +2]
+  Robust, tuned vs Bayes filter (reference): RMSE +0.0000 ±0.0000, CRPS +0.0000 ±0.0000, RMSE after the jump +0.0000 ±0.0000, delay +0 [+0, +0]
+
+== rare outliers: 5%, sd 10 ==
+fitted: one R = 5.62 (max likelihood) or 2.24 (forecast CRPS); input-dependent R = 1.12, c = 3, k = 3; input-dependent with c = 2, k = 5 fixed: R = 1.12;
+        robust R = 1.12, c = 2.75; robust with c = 2 fixed: R = 1.12; robust + input-dependent R = 1.12, robust c = 3.5, noise c = 5, k = 3;
+        past only: input-dependent R = 2.24, c = inf (off), k = - (not used); robust + input-dependent R = 1.12, robust c = 2.75, noise c = inf (off), k = - (not used)
+
+                                           --------------------- before the jump ---------------------- -------- after the jump ---------
+filter                                              RMSE          CRPS  90% cover  50% cover  90% width  delay [95% CI]   RMSE (50 steps)
+Kalman, R = 1                               1.010 ±0.021  0.506 ±0.010      77.8%      41.4%       1.71        4 [4, 5]        1.20 ±0.05
+Kalman, one R (max likelihood)              0.844 ±0.014  0.467 ±0.007      90.4%      54.2%       2.76     11 [10, 12]        1.47 ±0.04
+Kalman, one R (forecast CRPS)               0.895 ±0.017  0.473 ±0.008      84.2%      48.1%       2.15        7 [7, 8]        1.27 ±0.05
+Kalman, input-dependent R_t                 0.560 ±0.005  0.315 ±0.003      90.4%      50.8%       1.86        6 [6, 7]        1.19 ±0.02
+Kalman, input-dependent R_t, c = 2 fixed    0.573 ±0.005  0.323 ±0.003      90.7%      51.0%       1.91        7 [7, 8]        1.36 ±0.03
+Kalman, input-dependent R_t (past only)     0.895 ±0.017  0.473 ±0.008      84.2%      48.1%       2.15        7 [7, 8]        1.27 ±0.05
+Robust, tuned                               0.560 ±0.005  0.315 ±0.003      90.1%      50.3%       1.84        8 [8, 9]        1.29 ±0.03
+Robust, c = 2 fixed                         0.567 ±0.005  0.320 ±0.003      90.3%      50.6%       1.88      10 [9, 10]        1.45 ±0.04
+Robust + input-dependent R_t                0.558 ±0.005  0.315 ±0.003      90.3%      50.6%       1.85        8 [7, 8]        1.27 ±0.03
+Robust + input-dependent R_t (past only)    0.560 ±0.005  0.315 ±0.003      90.1%      50.3%       1.84        8 [8, 9]        1.29 ±0.03
+Bayes filter (reference)                    0.541 ±0.004  0.305 ±0.002      89.9%      50.0%       1.78        6 [6, 6]        1.34 ±0.05
+
+Paired differences on the same test sequences (first minus second; mean and 95% interval):
+  Robust, tuned vs Kalman, one R (max likelihood): RMSE -0.2841 ±0.0121, CRPS -0.1515 ±0.0061, RMSE after the jump -0.1855 ±0.0352, delay -3 [-4, -2]
+  Robust, tuned vs Kalman, one R (forecast CRPS): RMSE -0.3351 ±0.0158, CRPS -0.1573 ±0.0076, RMSE after the jump +0.0172 ±0.0431, delay +1 [+0, +1]
+  Robust, tuned vs Kalman, input-dependent R_t: RMSE +0.0000 ±0.0009, CRPS +0.0001 ±0.0005, RMSE after the jump +0.1007 ±0.0111, delay +2 [+1, +3]
+  Robust + input-dependent R_t vs Kalman, input-dependent R_t: RMSE -0.0015 ±0.0006, CRPS -0.0007 ±0.0003, RMSE after the jump +0.0766 ±0.0076, delay +2 [+1, +2]
+  Robust + input-dependent R_t (past only) vs Kalman, input-dependent R_t (past only): RMSE -0.3351 ±0.0158, CRPS -0.1573 ±0.0076, RMSE after the jump +0.0172 ±0.0431, delay +1 [+0, +1]
+  Robust, c = 2 fixed vs Kalman, input-dependent R_t, c = 2 fixed: RMSE -0.0057 ±0.0010, CRPS -0.0031 ±0.0005, RMSE after the jump +0.0934 ±0.0136, delay +3 [+2, +3]
+  Robust, tuned vs Bayes filter (reference): RMSE +0.0192 ±0.0020, CRPS +0.0107 ±0.0011, RMSE after the jump -0.0486 ±0.0252, delay +2 [+2, +3]
+
+== frequent outliers: 20%, sd 10 ==
+fitted: one R = 20 (max likelihood) or 7.08 (forecast CRPS); input-dependent R = 2.51, c = 1.75, k = 5; input-dependent with c = 2, k = 5 fixed: R = 2.51;
+        robust R = 2.24, c = 2; robust with c = 2 fixed: R = 2.24; robust + input-dependent R = 2.51, robust c = 5, noise c = 2, k = 5;
+        past only: input-dependent R = 7.08, c = inf (off), k = - (not used); robust + input-dependent R = 2.24, robust c = 2, noise c = inf (off), k = - (not used)
+
+                                           --------------------- before the jump ---------------------- -------- after the jump ---------
+filter                                              RMSE          CRPS  90% cover  50% cover  90% width  delay [95% CI]   RMSE (50 steps)
+Kalman, R = 1                               1.809 ±0.022  1.049 ±0.015      52.2%      25.2%       1.71        4 [4, 5]        1.94 ±0.06
+Kalman, one R (max likelihood)              1.150 ±0.019  0.651 ±0.011      90.2%      51.5%       3.83     23 [21, 26]        2.11 ±0.07
+Kalman, one R (forecast CRPS)               1.241 ±0.018  0.704 ±0.011      78.1%      40.4%       2.93     14 [12, 15]        1.81 ±0.06
+Kalman, input-dependent R_t                 0.671 ±0.008  0.378 ±0.004      93.1%      55.1%       2.43     10 [10, 11]        1.57 ±0.04
+Kalman, input-dependent R_t, c = 2 fixed    0.671 ±0.008  0.378 ±0.004      92.8%      54.7%       2.40     10 [10, 10]        1.54 ±0.04
+Kalman, input-dependent R_t (past only)     1.241 ±0.018  0.704 ±0.011      78.1%      40.4%       2.93     14 [12, 15]        1.81 ±0.06
+Robust, tuned                               0.672 ±0.009  0.377 ±0.005      91.6%      52.9%       2.31     13 [12, 14]        1.67 ±0.05
+Robust, c = 2 fixed                         0.672 ±0.009  0.377 ±0.005      91.6%      52.9%       2.31     13 [12, 14]        1.67 ±0.05
+Robust + input-dependent R_t                0.671 ±0.008  0.378 ±0.004      92.9%      54.9%       2.41     11 [10, 11]        1.59 ±0.04
+Robust + input-dependent R_t (past only)    0.672 ±0.009  0.377 ±0.005      91.6%      52.9%       2.31     13 [12, 14]        1.67 ±0.05
+Bayes filter (reference)                    0.599 ±0.006  0.335 ±0.003      90.0%      50.3%       1.96        9 [8, 9]        1.65 ±0.07
+
+Paired differences on the same test sequences (first minus second; mean and 95% interval):
+  Robust, tuned vs Kalman, one R (max likelihood): RMSE -0.4788 ±0.0157, CRPS -0.2732 ±0.0089, RMSE after the jump -0.4435 ±0.0512, delay -10 [-13, -8]
+  Robust, tuned vs Kalman, one R (forecast CRPS): RMSE -0.5694 ±0.0163, CRPS -0.3267 ±0.0100, RMSE after the jump -0.1467 ±0.0466, delay -1 [-2, +1]
+  Robust, tuned vs Kalman, input-dependent R_t: RMSE +0.0007 ±0.0016, CRPS -0.0002 ±0.0007, RMSE after the jump +0.0997 ±0.0172, delay +3 [+2, +4]
+  Robust + input-dependent R_t vs Kalman, input-dependent R_t: RMSE -0.0001 ±0.0005, CRPS -0.0001 ±0.0002, RMSE after the jump +0.0170 ±0.0035, delay +1 [+0, +1]
+  Robust + input-dependent R_t (past only) vs Kalman, input-dependent R_t (past only): RMSE -0.5694 ±0.0163, CRPS -0.3267 ±0.0100, RMSE after the jump -0.1467 ±0.0466, delay -1 [-2, +1]
+  Robust, c = 2 fixed vs Kalman, input-dependent R_t, c = 2 fixed: RMSE +0.0001 ±0.0017, CRPS -0.0002 ±0.0007, RMSE after the jump +0.1297 ±0.0180, delay +3 [+2, +4]
+  Robust, tuned vs Bayes filter (reference): RMSE +0.0728 ±0.0043, CRPS +0.0423 ±0.0023, RMSE after the jump +0.0156 ±0.0315, delay +4 [+3, +5]
+
+== frequent mild outliers: 20%, sd 3 ==
+fitted: one R = 2.51 (max likelihood) or 2 (forecast CRPS); input-dependent R = 1.58, c = 2.75, k = 5; input-dependent with c = 2, k = 5 fixed: R = 1.58;
+        robust R = 1.58, c = 2.5; robust with c = 2 fixed: R = 1.58; robust + input-dependent R = 1.58, robust c = 6, noise c = 2.75, k = 3;
+        past only: input-dependent R = 2, c = inf (off), k = - (not used); robust + input-dependent R = 1.58, robust c = 2.5, noise c = inf (off), k = - (not used)
+
+                                           --------------------- before the jump ---------------------- -------- after the jump ---------
+filter                                              RMSE          CRPS  90% cover  50% cover  90% width  delay [95% CI]   RMSE (50 steps)
+Kalman, R = 1                               0.723 ±0.007  0.408 ±0.004      78.4%      40.4%       1.71        5 [4, 5]        1.03 ±0.03
+Kalman, one R (max likelihood)              0.682 ±0.007  0.384 ±0.004      89.7%      50.8%       2.22        7 [7, 8]        1.20 ±0.03
+Kalman, one R (forecast CRPS)               0.685 ±0.007  0.385 ±0.004      87.4%      48.4%       2.08        6 [6, 7]        1.14 ±0.03
+Kalman, input-dependent R_t                 0.622 ±0.007  0.350 ±0.004      90.1%      50.7%       2.04        8 [7, 8]        1.32 ±0.03
+Kalman, input-dependent R_t, c = 2 fixed    0.626 ±0.007  0.352 ±0.004      90.7%      51.3%       2.09        8 [8, 9]        1.40 ±0.04
+Kalman, input-dependent R_t (past only)     0.685 ±0.007  0.385 ±0.004      87.4%      48.4%       2.08        6 [6, 7]        1.14 ±0.03
+Robust, tuned                               0.625 ±0.007  0.352 ±0.004      89.7%      50.3%       2.03      10 [9, 10]        1.39 ±0.04
+Robust, c = 2 fixed                         0.628 ±0.008  0.354 ±0.004      90.0%      50.6%       2.06     11 [10, 11]        1.51 ±0.05
+Robust + input-dependent R_t                0.622 ±0.007  0.350 ±0.004      90.4%      51.2%       2.06        8 [7, 8]        1.31 ±0.03
+Robust + input-dependent R_t (past only)    0.625 ±0.007  0.352 ±0.004      89.7%      50.3%       2.03      10 [9, 10]        1.39 ±0.04
+Bayes filter (reference)                    0.605 ±0.006  0.339 ±0.003      90.0%      50.2%       1.98        7 [7, 7]        1.37 ±0.04
+
+Paired differences on the same test sequences (first minus second; mean and 95% interval):
+  Robust, tuned vs Kalman, one R (max likelihood): RMSE -0.0572 ±0.0030, CRPS -0.0319 ±0.0016, RMSE after the jump +0.1978 ±0.0187, delay +3 [+2, +3]
+  Robust, tuned vs Kalman, one R (forecast CRPS): RMSE -0.0603 ±0.0034, CRPS -0.0330 ±0.0019, RMSE after the jump +0.2495 ±0.0207, delay +4 [+2, +4]
+  Robust, tuned vs Kalman, input-dependent R_t: RMSE +0.0029 ±0.0011, CRPS +0.0017 ±0.0006, RMSE after the jump +0.0732 ±0.0095, delay +2 [+1, +3]
+  Robust + input-dependent R_t vs Kalman, input-dependent R_t: RMSE -0.0002 ±0.0007, CRPS -0.0002 ±0.0004, RMSE after the jump -0.0124 ±0.0037, delay +0 [+0, +1]
+  Robust + input-dependent R_t (past only) vs Kalman, input-dependent R_t (past only): RMSE -0.0603 ±0.0034, CRPS -0.0330 ±0.0019, RMSE after the jump +0.2495 ±0.0207, delay +4 [+2, +4]
+  Robust, c = 2 fixed vs Kalman, input-dependent R_t, c = 2 fixed: RMSE +0.0022 ±0.0014, CRPS +0.0013 ±0.0008, RMSE after the jump +0.1069 ±0.0138, delay +3 [+2, +3]
+  Robust, tuned vs Bayes filter (reference): RMSE +0.0201 ±0.0025, CRPS +0.0128 ±0.0015, RMSE after the jump +0.0255 ±0.0112, delay +3 [+2, +3]
+
+== huge outliers: 10%, sd 32 ==
+fitted: one R = 100 (max likelihood) or 14.1 (forecast CRPS); input-dependent R = 1.41, c = 3, k = 9; input-dependent with c = 2, k = 5 fixed: R = 1.58;
+        robust R = 1.41, c = 2.5; robust with c = 2 fixed: R = 1.41; robust + input-dependent R = 1.41, robust c = 3, noise c = 6, k = 5;
+        past only: input-dependent R = 14.1, c = inf (off), k = - (not used); robust + input-dependent R = 1.41, robust c = 2.5, noise c = inf (off), k = - (not used)
+
+                                           --------------------- before the jump ---------------------- -------- after the jump ---------
+filter                                              RMSE          CRPS  90% cover  50% cover  90% width  delay [95% CI]   RMSE (50 steps)
+Kalman, R = 1                               3.958 ±0.076  2.014 ±0.047      50.5%      25.8%       1.71        7 [3, 8]        3.87 ±0.23
+Kalman, one R (max likelihood)              1.691 ±0.043  0.963 ±0.024      90.7%      51.3%       5.72     48 [43, 57]        3.09 ±0.16
+Kalman, one R (forecast CRPS)               2.130 ±0.047  1.219 ±0.031      66.9%      34.0%       3.51     19 [16, 24]        2.67 ±0.14
+Kalman, input-dependent R_t                 0.579 ±0.006  0.326 ±0.003      91.7%      52.6%       2.00        9 [8, 9]        1.41 ±0.04
+Kalman, input-dependent R_t, c = 2 fixed    0.589 ±0.006  0.332 ±0.003      92.9%      54.2%       2.12        9 [8, 9]        1.43 ±0.03
+Kalman, input-dependent R_t (past only)     2.130 ±0.047  1.219 ±0.031      66.9%      34.0%       3.51     19 [16, 24]        2.67 ±0.14
+Robust, tuned                               0.576 ±0.006  0.325 ±0.003      91.9%      52.8%       2.00       9 [9, 10]        1.41 ±0.04
+Robust, c = 2 fixed                         0.582 ±0.006  0.328 ±0.003      92.0%      52.8%       2.03     11 [10, 11]        1.53 ±0.04
+Robust + input-dependent R_t                0.574 ±0.006  0.324 ±0.003      92.0%      52.9%       2.00        9 [9, 9]        1.39 ±0.04
+Robust + input-dependent R_t (past only)    0.576 ±0.006  0.325 ±0.003      91.9%      52.8%       2.00       9 [9, 10]        1.41 ±0.04
+Bayes filter (reference)                    0.548 ±0.005  0.308 ±0.003      90.1%      50.1%       1.80        6 [6, 7]        1.35 ±0.05
+
+Paired differences on the same test sequences (first minus second; mean and 95% interval):
+  Robust, tuned vs Kalman, one R (max likelihood): RMSE -1.1148 ±0.0415, CRPS -0.6385 ±0.0236, RMSE after the jump -1.6753 ±0.1475, delay -39 [-48, -34]
+  Robust, tuned vs Kalman, one R (forecast CRPS): RMSE -1.5535 ±0.0470, CRPS -0.8941 ±0.0306, RMSE after the jump -1.2618 ±0.1364, delay -10 [-15, -7]
+  Robust, tuned vs Kalman, input-dependent R_t: RMSE -0.0029 ±0.0005, CRPS -0.0015 ±0.0003, RMSE after the jump +0.0068 ±0.0057, delay +0 [+0, +1]
+  Robust + input-dependent R_t vs Kalman, input-dependent R_t: RMSE -0.0049 ±0.0006, CRPS -0.0027 ±0.0003, RMSE after the jump -0.0170 ±0.0047, delay +0 [+0, +1]
+  Robust + input-dependent R_t (past only) vs Kalman, input-dependent R_t (past only): RMSE -1.5535 ±0.0470, CRPS -0.8941 ±0.0306, RMSE after the jump -1.2618 ±0.1364, delay -10 [-15, -7]
+  Robust, c = 2 fixed vs Kalman, input-dependent R_t, c = 2 fixed: RMSE -0.0072 ±0.0012, CRPS -0.0043 ±0.0005, RMSE after the jump +0.0950 ±0.0134, delay +2 [+1, +3]
+  Robust, tuned vs Bayes filter (reference): RMSE +0.0285 ±0.0024, CRPS +0.0163 ±0.0013, RMSE after the jump +0.0613 ±0.0257, delay +3 [+2, +4]
+
+== outliers at test time only: 10%, sd 10 ==
+fitted: one R = 1 (max likelihood) or 1 (forecast CRPS); input-dependent R = 1, c = inf (off), k = - (not used); input-dependent with c = 2, k = 5 fixed: R = 1;
+        robust R = 1, c = inf (off); robust with c = 2 fixed: R = 0.891; robust + input-dependent R = 1, robust c = inf (off), noise c = inf (off), k = - (not used);
+        past only: input-dependent R = 1, c = 15, k = 5; robust + input-dependent R = 1, robust c = inf (off), noise c = 15, k = 5
+
+                                           --------------------- before the jump ---------------------- -------- after the jump ---------
+filter                                              RMSE          CRPS  90% cover  50% cover  90% width  delay [95% CI]   RMSE (50 steps)
+Kalman, R = 1                               1.349 ±0.020  0.711 ±0.012      67.2%      34.3%       1.71        5 [4, 5]        1.48 ±0.05
+Kalman, one R (max likelihood)              1.349 ±0.020  0.711 ±0.012      67.2%      34.3%       1.71        5 [4, 5]        1.48 ±0.05
+Kalman, one R (forecast CRPS)               1.349 ±0.020  0.711 ±0.012      67.2%      34.3%       1.71        5 [4, 5]        1.48 ±0.05
+Kalman, input-dependent R_t                 1.349 ±0.020  0.711 ±0.012      67.2%      34.3%       1.71        5 [4, 5]        1.48 ±0.05
+Kalman, input-dependent R_t, c = 2 fixed    0.590 ±0.006  0.332 ±0.003      89.3%      49.2%       1.89        7 [7, 8]        1.40 ±0.03
+Kalman, input-dependent R_t (past only)     1.423 ±0.022  0.746 ±0.013      66.7%      34.0%       1.73        5 [4, 5]        1.54 ±0.06
+Robust, tuned                               1.349 ±0.020  0.711 ±0.012      67.2%      34.3%       1.71        5 [4, 5]        1.48 ±0.05
+Robust, c = 2 fixed                         0.582 ±0.006  0.327 ±0.003      88.0%      47.6%       1.80      10 [9, 10]        1.51 ±0.04
+Robust + input-dependent R_t                1.349 ±0.020  0.711 ±0.012      67.2%      34.3%       1.71        5 [4, 5]        1.48 ±0.05
+Robust + input-dependent R_t (past only)    1.423 ±0.022  0.746 ±0.013      66.7%      34.0%       1.73        5 [4, 5]        1.54 ±0.06
+Bayes filter (reference)                    0.560 ±0.005  0.315 ±0.003      90.0%      49.9%       1.83        7 [7, 7]        1.49 ±0.06
+
+Paired differences on the same test sequences (first minus second; mean and 95% interval):
+  Robust, tuned vs Kalman, one R (max likelihood): RMSE +0.0000 ±0.0000, CRPS +0.0000 ±0.0000, RMSE after the jump +0.0000 ±0.0000, delay +0 [+0, +0]
+  Robust, tuned vs Kalman, one R (forecast CRPS): RMSE +0.0000 ±0.0000, CRPS +0.0000 ±0.0000, RMSE after the jump +0.0000 ±0.0000, delay +0 [+0, +0]
+  Robust, tuned vs Kalman, input-dependent R_t: RMSE +0.0000 ±0.0000, CRPS +0.0000 ±0.0000, RMSE after the jump +0.0000 ±0.0000, delay +0 [+0, +0]
+  Robust + input-dependent R_t vs Kalman, input-dependent R_t: RMSE +0.0000 ±0.0000, CRPS +0.0000 ±0.0000, RMSE after the jump +0.0000 ±0.0000, delay +0 [+0, +0]
+  Robust + input-dependent R_t (past only) vs Kalman, input-dependent R_t (past only): RMSE +0.0000 ±0.0000, CRPS +0.0000 ±0.0000, RMSE after the jump +0.0000 ±0.0000, delay +0 [+0, +0]
+  Robust, c = 2 fixed vs Kalman, input-dependent R_t, c = 2 fixed: RMSE -0.0080 ±0.0010, CRPS -0.0042 ±0.0005, RMSE after the jump +0.1016 ±0.0143, delay +3 [+2, +3]
+  Robust, tuned vs Bayes filter (reference): RMSE +0.7890 ±0.0203, CRPS +0.3962 ±0.0113, RMSE after the jump -0.0141 ±0.0715, delay -2 [-3, -2]
+
+== outlier bursts: 10%, sd 10, mean run 5 ==
+fitted: one R = 11.2 (max likelihood) or 2.24 (forecast CRPS); input-dependent R = 1.41, c = 2.75, k = 9; input-dependent with c = 2, k = 5 fixed: R = 1.41;
+        robust R = 1.41, c = 2.25; robust with c = 2 fixed: R = 1.26; robust + input-dependent R = 1.41, robust c = 2.25, noise c = 15, k = 9;
+        past only: input-dependent R = 2.24, c = 1.75, k = 9; robust + input-dependent R = 1.26, robust c = 2.5, noise c = 5, k = 9
+
+                                           --------------------- before the jump ---------------------- -------- after the jump ---------
+filter                                              RMSE          CRPS  90% cover  50% cover  90% width  delay [95% CI]   RMSE (50 steps)
+Kalman, R = 1                               1.341 ±0.043  0.614 ±0.020      77.8%      42.1%       1.71        5 [4, 6]        1.40 ±0.09
+Kalman, one R (max likelihood)              1.000 ±0.024  0.551 ±0.012      91.2%      55.8%       3.31     19 [17, 20]        1.81 ±0.06
+Kalman, one R (forecast CRPS)               1.150 ±0.036  0.561 ±0.017      83.2%      48.5%       2.15        8 [7, 8]        1.42 ±0.07
+Kalman, input-dependent R_t                 0.701 ±0.018  0.372 ±0.007      89.2%      50.2%       2.01        9 [8, 9]        1.49 ±0.05
+Kalman, input-dependent R_t, c = 2 fixed    0.739 ±0.021  0.385 ±0.007      89.5%      50.5%       2.07        8 [8, 9]        1.49 ±0.05
+Kalman, input-dependent R_t (past only)     1.067 ±0.036  0.529 ±0.015      85.6%      50.0%       2.32     10 [10, 11]        1.64 ±0.07
+Robust, tuned                               0.667 ±0.013  0.362 ±0.006      89.5%      50.5%       2.01     10 [10, 11]        1.51 ±0.05
+Robust, c = 2 fixed                         0.660 ±0.012  0.359 ±0.005      89.0%      49.6%       1.97     11 [10, 11]        1.56 ±0.05
+Robust + input-dependent R_t                0.666 ±0.013  0.361 ±0.006      89.6%      50.6%       2.02     10 [10, 11]        1.52 ±0.05
+Robust + input-dependent R_t (past only)    0.652 ±0.012  0.354 ±0.005      89.8%      50.4%       2.00     10 [10, 11]        1.52 ±0.05
+Bayes filter (reference)                    0.588 ±0.009  0.324 ±0.004      89.9%      50.0%       1.88     11 [10, 12]        1.93 ±0.09
+
+Paired differences on the same test sequences (first minus second; mean and 95% interval):
+  Robust, tuned vs Kalman, one R (max likelihood): RMSE -0.3338 ±0.0184, CRPS -0.1889 ±0.0091, RMSE after the jump -0.2964 ±0.0418, delay -9 [-10, -6]
+  Robust, tuned vs Kalman, one R (forecast CRPS): RMSE -0.4835 ±0.0293, CRPS -0.1997 ±0.0137, RMSE after the jump +0.0901 ±0.0572, delay +2 [+2, +4]
+  Robust, tuned vs Kalman, input-dependent R_t: RMSE -0.0342 ±0.0095, CRPS -0.0104 ±0.0028, RMSE after the jump +0.0236 ±0.0127, delay +1 [+1, +2]
+  Robust + input-dependent R_t vs Kalman, input-dependent R_t: RMSE -0.0353 ±0.0095, CRPS -0.0108 ±0.0028, RMSE after the jump +0.0360 ±0.0128, delay +1 [+1, +2]
+  Robust + input-dependent R_t (past only) vs Kalman, input-dependent R_t (past only): RMSE -0.4147 ±0.0297, CRPS -0.1743 ±0.0121, RMSE after the jump -0.1171 ±0.0555, delay +0 [-1, +1]
+  Robust, c = 2 fixed vs Kalman, input-dependent R_t, c = 2 fixed: RMSE -0.0791 ±0.0142, CRPS -0.0262 ±0.0043, RMSE after the jump +0.0763 ±0.0225, delay +3 [+2, +3]
+  Robust, tuned vs Bayes filter (reference): RMSE +0.0781 ±0.0090, CRPS +0.0381 ±0.0036, RMSE after the jump -0.4207 ±0.0532, delay -1 [-1, +0]
+
+== fast-moving state: Q = 1, 10% outliers, sd 10 ==
+fitted: one R = 11.2 (max likelihood) or 5.01 (forecast CRPS); input-dependent R = 1.26, c = 2.75, k = 3; input-dependent with c = 2, k = 5 fixed: R = 1.41;
+        robust R = 1.26, c = 1.75; robust with c = 2 fixed: R = 1.41; robust + input-dependent R = 1.26, robust c = 2.25, noise c = 6, k = 3;
+        past only: input-dependent R = 5.01, c = inf (off), k = - (not used); robust + input-dependent R = 1.26, robust c = 1.75, noise c = inf (off), k = - (not used)
+
+                                           --------------------- before the jump ---------------------- -------- after the jump ---------
+filter                                              RMSE          CRPS  90% cover  50% cover  90% width  delay [95% CI]   RMSE (50 steps)
+Kalman, R = 1                               2.213 ±0.035  0.979 ±0.014      76.6%      41.2%       2.59        1 [1, 2]        2.12 ±0.10
+Kalman, one R (max likelihood)              1.657 ±0.019  0.906 ±0.009      91.5%      57.4%       5.58        6 [4, 6]        1.84 ±0.06
+Kalman, one R (forecast CRPS)               1.726 ±0.023  0.889 ±0.010      87.0%      53.8%       4.40        3 [3, 4]        1.80 ±0.07
+Kalman, input-dependent R_t                 1.026 ±0.010  0.557 ±0.004      89.9%      50.7%       3.17        3 [3, 3]        1.25 ±0.04
+Kalman, input-dependent R_t, c = 2 fixed    1.079 ±0.010  0.588 ±0.005      91.0%      51.5%       3.44        4 [4, 4]        1.40 ±0.04
+Kalman, input-dependent R_t (past only)     1.726 ±0.023  0.889 ±0.010      87.0%      53.8%       4.40        3 [3, 4]        1.80 ±0.07
+Robust, tuned                               1.014 ±0.009  0.552 ±0.004      89.9%      50.6%       3.13        3 [3, 3]        1.24 ±0.04
+Robust, c = 2 fixed                         1.026 ±0.009  0.558 ±0.004      90.2%      51.3%       3.20        3 [3, 3]        1.23 ±0.04
+Robust + input-dependent R_t                1.002 ±0.009  0.547 ±0.004      90.1%      50.8%       3.12        3 [3, 3]        1.24 ±0.04
+Robust + input-dependent R_t (past only)    1.014 ±0.009  0.552 ±0.004      89.9%      50.6%       3.13        3 [3, 3]        1.24 ±0.04
+Bayes filter (reference)                    0.940 ±0.008  0.509 ±0.003      90.1%      49.9%       2.97        3 [2, 3]        1.21 ±0.05
+
+Paired differences on the same test sequences (first minus second; mean and 95% interval):
+  Robust, tuned vs Kalman, one R (max likelihood): RMSE -0.6435 ±0.0163, CRPS -0.3541 ±0.0075, RMSE after the jump -0.5950 ±0.0483, delay -3 [-3, -1]
+  Robust, tuned vs Kalman, one R (forecast CRPS): RMSE -0.7124 ±0.0210, CRPS -0.3364 ±0.0090, RMSE after the jump -0.5555 ±0.0632, delay +0 [-1, +0]
+  Robust, tuned vs Kalman, input-dependent R_t: RMSE -0.0126 ±0.0030, CRPS -0.0051 ±0.0009, RMSE after the jump -0.0044 ±0.0075, delay +0 [+0, +0]
+  Robust + input-dependent R_t vs Kalman, input-dependent R_t: RMSE -0.0240 ±0.0028, CRPS -0.0108 ±0.0008, RMSE after the jump -0.0098 ±0.0070, delay +0 [+0, +0]
+  Robust + input-dependent R_t (past only) vs Kalman, input-dependent R_t (past only): RMSE -0.7124 ±0.0210, CRPS -0.3364 ±0.0090, RMSE after the jump -0.5555 ±0.0632, delay +0 [-1, +0]
+  Robust, c = 2 fixed vs Kalman, input-dependent R_t, c = 2 fixed: RMSE -0.0531 ±0.0045, CRPS -0.0302 ±0.0020, RMSE after the jump -0.1659 ±0.0175, delay -1 [-1, -1]
+  Robust, tuned vs Bayes filter (reference): RMSE +0.0733 ±0.0042, CRPS +0.0432 ±0.0020, RMSE after the jump +0.0359 ±0.0222, delay +0 [+0, +1]
+
+Notes
+- RMSE and CRPS: means over 200 test sequences of 1000 steps, ± the half-width of a 95% interval for the mean. Coverage and width: means. All over steps 1-500 (before the jump).
+- Delay: steps after the jump until the error averaged over sequences is below 1 (80% of the jump recovered); 0 means already at the first step after it. Its interval resamples sequences. RMSE after the jump: steps 501-550.
+- The ± in a row is for that row alone. Every row is scored on the same test sequences, and each paired line gives a difference its own interval. Between filters that behave alike, such as the robust filter and input-dependent noise from y_t, that interval is often much narrower than either row's (about ±0.001 in RMSE before the jump; wider with bursts or a fast state). Between filters that behave differently, such as the robust filter and one R, it can be as wide as the narrower row's ±, or wider; so can the past-only pair, which is the robust filter against one R wherever tuning switched its noise off. Judge differences by the paired lines, not by the printed digits.
+- Parameters were fitted on 100 training and 100 validation sequences without a jump, using observations only (see the docstring): the one-R maximum-likelihood filter by the likelihood of the training sequences, every other tuned filter by the CRPS of the one-step forecast N(m_{t|t-1}, P_{t|t-1} + R), with the base R, on the validation sequences. Every filter knows Q and the prior on x_0. Kalman, R = 1 is given the true clean noise level.
+- The Bayes filter knows the true outlier model, including the test-time outlier rate when it differs from the training data, but not the jump, so it has the lowest expected error before the jump only. Where its model has outliers, it first takes the jump for outliers, like the robust and input-dependent filters; with bursts, which it expects to come in runs, it does so for longer.
+- The input-dependent noise R_t = R + d_t^2 / c^2 equals R / w_t^2 for an IMQ weight on d_t, the distance from y_t to the median of the previous k readings; the robust weight uses e_t, the distance from the filter's prediction.
+- (past only): R_t = R + d_{t-1}^2 / c^2, which uses y_1, ..., y_{t-1} only. It cannot tell whether y_t itself is an outlier, only expect one after an outlier, which can help when outliers come in bursts. Its forecast N(m_{t|t-1}, P_{t|t-1} + R_t) is a proper density for y_t, which it would not be with d_t in place of d_{t-1}; but like every filter it was tuned on the forecast with the base R.
+- With c = 2 fixed the two weights are not equally strong: d_t is measured in units of sqrt(R) and e_t in units of sqrt(P_{t|t-1} + R), and in those units d_t is the larger, so the input-dependent weight down-weights more. Their paired line mixes the mechanism with the strength.
+- Robust + input-dependent R_t, both versions: R, the robust c and the noise's c and k were tuned together, over a grid that includes both filters alone. The weight is measured against P_{t|t-1} + R_t. Noise from d_t already grows with the reading, so where e_t is close to d_t the weight stays above about (1 + noise c^2 / robust c^2)^(-1/2); noise from past readings leaves the weight free.

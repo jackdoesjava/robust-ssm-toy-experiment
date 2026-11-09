@@ -1,0 +1,23 @@
+\small
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+ & \multicolumn{4}{c}{Before the jump} & \multicolumn{2}{c}{After the jump} \\
+\cmidrule(lr){2-5} \cmidrule(l){6-7}
+Filter & RMSE & CRPS & 90\% cover & 90\% width & Delay & RMSE \\
+\midrule
+Kalman, $R = 1$ & 1.343 & 0.705 & 67.5 & 1.71 & 5 & 1.53 \\
+Kalman, one $R$ (max.\ likelihood) & 0.996 & 0.560 & 90.0 & 3.31 & 19 & 1.88 \\
+Kalman, one $R$ (forecast CRPS) & 1.078 & 0.591 & 79.6 & 2.44 & 9 & 1.56 \\
+\midrule
+Kalman, input-dep.\ $R_t$, tuned & 0.593 & 0.333 & 91.1 & 2.01 & 8 & 1.36 \\
+Kalman, input-dep.\ $R_t$, $c = 2$ fixed & 0.597 & 0.336 & 91.4 & 2.04 & 8 & 1.42 \\
+Kalman, input-dep.\ $R_t$ (past), tuned & 1.078 & 0.591 & 79.6 & 2.44 & 9 & 1.56 \\
+\midrule
+Robust, tuned & 0.593 & 0.334 & 90.9 & 2.00 & 10 & 1.47 \\
+Robust, $c = 2$ fixed & 0.595 & 0.335 & 91.1 & 2.01 & 11 & 1.54 \\
+Robust + input-dep.\ $R_t$, tuned & 0.592 & 0.333 & 91.2 & 2.01 & 9 & 1.40 \\
+Robust + input-dep.\ $R_t$ (past), tuned & 0.593 & 0.334 & 90.9 & 2.00 & 10 & 1.47 \\
+\midrule
+Bayes filter (reference) & 0.560 & 0.315 & 90.0 & 1.83 & 7 & 1.46 \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,11 @@
+{
+ "started": "2026-11-07 21:14:10",
+ "python": "3.14.4",
+ "numpy": "2.4.4",
+ "scipy": "1.17.1",
+ "matplotlib": "3.11.1",
+ "quick": false,
+ "only": null,
+ "workers": 6,
+ "script_sha256": "10095aecf4bb0fb8b29af7c127c9f6f59d93906571d6828a9dd10be1216d9f9b"
+}
