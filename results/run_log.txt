@@ -1,205 +1,187 @@
-[21:14:10] PASS  IMQ weight at a residual of one predictive sd with c = 2 is 1/sqrt(1.25)  (0)
-[21:14:10] PASS  Kalman means equal exact Gaussian conditioning, time-varying a_t, Q_t (one R)  (1.78e-15)
-[21:14:10] PASS  Kalman variances equal exact Gaussian conditioning (one R)  (1.67e-16)
-[21:14:10] PASS  forecast CRPS equals the exact one-step predictive with base R (one R)  (4.44e-16)
-[21:14:10] PASS  forecast log-likelihood equals the exact one-step predictive (one R)  (1.42e-14)
-[21:14:10] PASS  Kalman means equal exact Gaussian conditioning, time-varying a_t, Q_t (R_t in the update)  (4.44e-16)
-[21:14:10] PASS  Kalman variances equal exact Gaussian conditioning (R_t in the update)  (1.11e-16)
-[21:14:10] PASS  forecast CRPS equals the exact one-step predictive with base R (R_t in the update)  (4.44e-16)
-[21:14:10] PASS  forecast log-likelihood equals the exact one-step predictive (R_t in the update)  (0)
-[21:14:10] PASS  robust filter equals an information-form robust update (one R)  (2.22e-16)
-[21:14:10] PASS  robust filter equals an information-form robust update (R_t)  (1.67e-16)
-[21:14:10] PASS  robust filter with c = inf is the Kalman filter  (0)
-[21:14:10] PASS  robust filter with c = 1e9 is within 1e-9 of the Kalman filter  (3.55e-15)
-[21:14:10] PASS  Kalman predictive variance reaches the steady-state Riccati value  (5.55e-17)
-[21:14:11] PASS  grid Bayes filter equals exact enumeration of outlier patterns (independent outliers): mean  (9.33e-15)
-[21:14:11] PASS  grid Bayes filter equals exact enumeration of outlier patterns (independent outliers): pit  (3.12e-08)
-[21:14:11] PASS  grid Bayes filter equals exact enumeration of outlier patterns (independent outliers): crps  (1.41e-08)
-[21:14:11] PASS  grid Bayes filter equals exact enumeration of outlier patterns (independent outliers): width90  (5.28e-08)
-[21:14:11] PASS  grid Bayes filter equals exact enumeration of outlier patterns (bursty outliers): mean  (5.22e-15)
-[21:14:11] PASS  grid Bayes filter equals exact enumeration of outlier patterns (bursty outliers): pit  (4.5e-08)
-[21:14:11] PASS  grid Bayes filter equals exact enumeration of outlier patterns (bursty outliers): crps  (2.73e-08)
-[21:14:11] PASS  grid Bayes filter equals exact enumeration of outlier patterns (bursty outliers): width90  (4.94e-08)
-[21:14:11] PASS  grid Bayes filter equals exact enumeration of outlier patterns (a real jump of 5 at step 6): mean  (4.88e-15)
-[21:14:11] PASS  grid Bayes filter equals exact enumeration of outlier patterns (a real jump of 5 at step 6): pit  (4.29e-08)
-[21:14:11] PASS  grid Bayes filter equals exact enumeration of outlier patterns (a real jump of 5 at step 6): crps  (2.05e-08)
-[21:14:11] PASS  grid Bayes filter equals exact enumeration of outlier patterns (a real jump of 5 at step 6): width90  (5.26e-08)
-[21:14:12] PASS  grid Bayes filter equals the Kalman filter on clean data with a jump, Q = 0.1: mean  (2.67e-11)
-[21:14:12] PASS  grid Bayes filter equals the Kalman filter on clean data with a jump, Q = 0.1: pit  (5.26e-08)
-[21:14:12] PASS  grid Bayes filter equals the Kalman filter on clean data with a jump, Q = 0.1: crps  (2.96e-08)
-[21:14:12] PASS  grid Bayes filter equals the Kalman filter on clean data with a jump, Q = 0.1: width90  (4.77e-08)
-[21:14:14] PASS  grid Bayes filter equals the Kalman filter on clean data with a jump, Q = 1: mean  (4.26e-14)
-[21:14:14] PASS  grid Bayes filter equals the Kalman filter on clean data with a jump, Q = 1: pit  (1.01e-08)
-[21:14:14] PASS  grid Bayes filter equals the Kalman filter on clean data with a jump, Q = 1: crps  (8.55e-09)
-[21:14:14] PASS  grid Bayes filter equals the Kalman filter on clean data with a jump, Q = 1: width90  (1.37e-08)
-[21:14:21] PASS  grid Bayes filter: widening the grid to +-40 changes no score by 1e-9 (Q = 0.1, independent outliers)  (3.73e-14)
-[21:14:28] PASS  grid Bayes filter: widening the grid to +-40 changes no score by 1e-9 (Q = 0.1, bursts)  (3.91e-14)
-[21:14:47] PASS  grid Bayes filter: widening the grid to +-40 changes no score by 1e-9 (Q = 1, independent outliers)  (1.42e-14)
-[21:14:47] PASS  closed-form Gaussian CRPS matches Monte Carlo  (0.000691)
-[21:14:47] PASS  outlier rate is 10%  (0.0996)
-[21:14:47] PASS  clean noise variance is R  (0.998)
-[21:14:47] PASS  outlier noise variance is 100 R  (99.2)
-[21:14:47] PASS  the jump is +5 from column 500 (step 501) on and absent before  (3.55e-15)
-[21:14:47] PASS  random-walk step variance is Q  (0.1)
-[21:14:47] PASS  bursty outliers: rate is 10%  (0.0989)
-[21:14:47] PASS  bursty outliers: mean run length is 5  (4.97)
-[21:14:47] PASS  bursty outliers: rate is 10% at each of the first four steps  (0.00101)
-[21:14:47] PASS  decaying state keeps variance SIGMA2  (1)
-[21:14:47] PASS  median decay is a_med  (0.9)
-[21:14:47] PASS  the input u_t is stationary with sd 0.75  (0.746)
-[21:14:47] PASS  decaying-state observation noise variance is (1 - eps) R2 + eps LAM R2  (2.69)
-[21:14:47] PASS  capped decay never exceeds the cap  (0.6)
-[21:14:47] PASS  calibrated Gaussian: 90% coverage  (0.899)
-[21:14:47] PASS  calibrated Gaussian: 50% coverage  (0.501)
-[21:14:47] PASS  calibrated Gaussian: RMSE is the sd  (1)
-[21:14:47] PASS  summarise: accuracy and calibration use only the steps before the jump  (0)
-[21:14:47] PASS  summarise: post-jump RMSE covers exactly the AFTER steps from the jump on  (1)
-[21:14:47] PASS  summarise: delay from the mean signed error (+-2 offsets cancel; 5 * 0.7^s gives 5)  (5)
-[21:14:47] PASS  summarise: interval half-width is 1.96 sd / sqrt(n)  (1.27)
-[21:14:47] PASS  local_distance2 equals a direct loop (prior mean before the first readings)  (0)
-[21:14:47] PASS  past_distance2 equals a direct loop on y_{t-1} (0 at the first step), so it never uses y_t  (0)
-[21:14:47] PASS  past_distance2 up to step t does not depend on y_t (y_t changed by 100, four steps t)  (0)
-[21:14:58] PASS  fit_all: the one-R maximum-likelihood R maximises the training log-likelihood (seed 104)  (10)
-[21:14:58] PASS  fit_all: the one-R forecast-CRPS R minimises the forecast CRPS (seed 104)  (2.51)
-[21:14:58] PASS  fit_all: the robust (R, c) minimise the forecast CRPS (seed 104)  (2.5)
-[21:14:58] PASS  fit_all: the R kept for every c is the best R for that c (seed 104)  (0)
-[21:14:58] PASS  fit_all: the c = 2 robust filter gets the best R for that c (seed 104)  (1.26)
-[21:14:58] PASS  fit_all: the input-dependent (R, c, k) minimise the forecast CRPS (seed 104)  (0)
-[21:14:58] PASS  fit_all: the input-dependent filter with c, k fixed gets its best R (seed 104)  (1.41)
-[21:14:58] PASS  fit_all: the robust + input-dependent (R, k, noise c, robust c) minimise the forecast CRPS over the whole grid (seed 104)  (0)
-[21:14:58] PASS  fit_all: the past-only input-dependent (R, c, k) minimise the forecast CRPS (seed 104)  (0)
-[21:14:58] PASS  fit_all: the past-only robust + input-dependent (R, k, noise c, robust c) minimise the forecast CRPS over the whole grid (seed 104)  (0)
-[21:14:58] PASS  fit_all: k is stored as None exactly when the noise c is inf (seed 104)  (1)
-[21:15:07] PASS  fit_all: the one-R maximum-likelihood R maximises the training log-likelihood (seed 231)  (14.1)
-[21:15:07] PASS  fit_all: the one-R forecast-CRPS R minimises the forecast CRPS (seed 231)  (3.98)
-[21:15:07] PASS  fit_all: the robust (R, c) minimise the forecast CRPS (seed 231)  (2.5)
-[21:15:07] PASS  fit_all: the R kept for every c is the best R for that c (seed 231)  (0)
-[21:15:07] PASS  fit_all: the c = 2 robust filter gets the best R for that c (seed 231)  (1.41)
-[21:15:07] PASS  fit_all: the input-dependent (R, c, k) minimise the forecast CRPS (seed 231)  (0)
-[21:15:07] PASS  fit_all: the input-dependent filter with c, k fixed gets its best R (seed 231)  (1.78)
-[21:15:07] PASS  fit_all: the robust + input-dependent (R, k, noise c, robust c) minimise the forecast CRPS over the whole grid (seed 231)  (0)
-[21:15:07] PASS  fit_all: the past-only input-dependent (R, c, k) minimise the forecast CRPS (seed 231)  (0)
-[21:15:07] PASS  fit_all: the past-only robust + input-dependent (R, k, noise c, robust c) minimise the forecast CRPS over the whole grid (seed 231)  (0)
-[21:15:07] PASS  fit_all: k is stored as None exactly when the noise c is inf (seed 231)  (1)
-[21:15:07] PASS  the data of seed 231 tell the fits apart, so the checks above are not vacuous (seed 231)  (1)
-[21:15:17] PASS  fit_all: the one-R maximum-likelihood R maximises the training log-likelihood (seed 302)  (14.1)
-[21:15:17] PASS  fit_all: the one-R forecast-CRPS R minimises the forecast CRPS (seed 302)  (2.24)
-[21:15:17] PASS  fit_all: the robust (R, c) minimise the forecast CRPS (seed 302)  (2)
-[21:15:17] PASS  fit_all: the R kept for every c is the best R for that c (seed 302)  (0)
-[21:15:17] PASS  fit_all: the c = 2 robust filter gets the best R for that c (seed 302)  (1)
-[21:15:17] PASS  fit_all: the input-dependent (R, c, k) minimise the forecast CRPS (seed 302)  (0)
-[21:15:17] PASS  fit_all: the input-dependent filter with c, k fixed gets its best R (seed 302)  (1.26)
-[21:15:17] PASS  fit_all: the robust + input-dependent (R, k, noise c, robust c) minimise the forecast CRPS over the whole grid (seed 302)  (0)
-[21:15:17] PASS  fit_all: the past-only input-dependent (R, c, k) minimise the forecast CRPS (seed 302)  (0)
-[21:15:17] PASS  fit_all: the past-only robust + input-dependent (R, k, noise c, robust c) minimise the forecast CRPS over the whole grid (seed 302)  (0)
-[21:15:17] PASS  fit_all: k is stored as None exactly when the noise c is inf (seed 302)  (1)
-[21:15:17] PASS  with bursts the past-only noise is used alone and with the weight, with its own fit (seed 302)  (1)
-[21:15:17] PASS  maximum likelihood on clean data learns R = 1 (within one grid step)  (1)
-[21:15:17] PASS  filter_specs gives each filter its own fitted parameters, each noise from its own window k (the past-only ones from y_{t-1})  (1)
-[21:15:17] PASS  filter_specs: a noise c of inf gives R_t = R exactly  (1)
-[21:15:17] PASS  scenario_text: the paired lines are the seven documented comparisons, in order  (7)
-[21:15:17] PASS  scenario_text: each paired line is first minus second (mean ± 1.96 sd / sqrt(n)) for RMSE, CRPS and RMSE after the jump, and the delay with its paired-bootstrap interval  (0)
-[21:15:17] PASS  scenario_text: the post-jump column names its window of 50 steps  (50)
-[21:15:17] PASS  signed: a value that rounds to zero prints as +0.0000, any other keeps its sign  (1)
-[21:15:17] PASS  exp1_table.tex: every filter in order, with its label, RMSE, CRPS, 90% cover, 90% width, delay and post-jump RMSE  (0)
-[21:15:17] PASS  sweep tables: the documented columns, and every row label describes its scenario  (0)
-[21:15:17] PASS  sweep_weight_table.tex: both header rows, and each setting's paired RMSE change from adding the robust weight, to noise from y_1..y_t and to noise from y_1..y_{t-1}, with its interval and share (the share signed as the change, one-digit shares padded)  (0)
-[21:15:17] PASS  pass 1 (all weights 1) is the ordinary Kalman filter  (0)
-[21:15:17] PASS  after k passes the first k - 1 filtered means are exact  (1)
-[21:15:17] PASS  and the k-th is not yet exact (checked for k = 1, 2, 3)  (1)
-[21:15:17] PASS  T + 1 passes give the sequential robust filter exactly  (0)
-[21:15:17] PASS  count_passes: error after each pass equals an independent iteration  (3.55e-15)
-[21:15:17] PASS  count_passes: pass counts and practical-rule counts equal the independent ones  (1)
-[21:15:17] PASS  count_passes: contraction factor is (error at the last pass / error at pass 2)^(1/(K - 2))  (1)
-[21:15:17] PASS  count_passes: memory equals a_{t+1} (1 - K_t) of the sequential robust filter, t = 1..T-1  (2.22e-16)
-[21:15:17] PASS  count_passes: memory equals the finite-difference effect of one step's prediction on the next one's  (4.43e-12)
-[21:15:20] PASS  run_scenario 6: fitted on jump-free training (seed 0) and validation (seed 1) data  (1)
-[21:15:21] PASS  run_scenario 6: every row equals its filter rebuilt from the documented parts  (0)
-[21:15:24] PASS  run_scenario 7: fitted on jump-free training (seed 0) and validation (seed 1) data  (1)
-[21:15:24] PASS  run_scenario 7: every row equals its filter rebuilt from the documented parts  (0)
-[21:15:29] PASS  trade-off curve: one point for every c, each the robust filter with the R tuned for that c  (0)
-[21:15:29] PASS  trade-off curve: its c = inf point is the 'Kalman, one R (forecast CRPS)' row  (1)
-[21:15:32] PASS  tuning stability: refits on fresh jump-free training (seed 10 + r) and validation (seed 20 + r) sequences, rows rebuilt  (0)
-[21:15:32] PASS  tuning stability check: the refits differ from each other and from the main fit  (1)
-[21:15:33] PASS  figure 1: the filters in (a); the curve, the c = inf point, the fixed and tuned c marks and the reference lines in (b) and (c)  (0)
-[21:15:34] PASS  experiment 2: the practical-rule line is the median (max) of the extra passes over sequences where both counts were reached  (0)
-[21:15:34] PASS  experiment 2: every cell of exp2_table.tex equals the saved results  (0)
-[21:15:39] PASS  Bayes filter split across worker processes equals one call (independent outliers at Q = 0.1; bursts at Q = 1; uneven chunks)  (1)
-[21:15:48] PASS  fit_all in worker processes equals fit_all in one process  (1)
-[21:15:48] PASS  fit_all on fabricated tables whose best entry is 'noise off, robust on': every choice is the brute-force one (none differ)  (0)
-[21:15:48] PASS  fit_all on fabricated tables ('noise off, robust on'): k is None exactly when the noise c is inf  (1)
-[21:15:48] PASS  fit_all on fabricated tables whose best entry is 'noise on, robust off': every choice is the brute-force one (none differ)  (0)
-[21:15:48] PASS  fit_all on fabricated tables ('noise on, robust off'): k is None exactly when the noise c is inf  (1)
-[21:15:48] PASS  fit_all on fabricated tables whose best entry is 'both on': every choice is the brute-force one (none differ)  (0)
-[21:15:48] PASS  fit_all on fabricated tables ('both on'): k is None exactly when the noise c is inf  (1)
-[21:15:48] PASS  fit_all on fabricated tables whose best entry is 'everything off': every choice is the brute-force one (none differ)  (0)
-[21:15:48] PASS  fit_all on fabricated tables ('everything off'): k is None exactly when the noise c is inf  (1)
-[21:15:48] PASS  the fabricated tables put the best entry on each edge of the search, for both kinds of noise  (1)
-[21:15:48] PASS  best_over: an exact tie goes to the first parameter in the dict, and to the first R in a row  (1)
-[21:15:50] PASS  Bayes filter through a stand-in pool, in 2, 3 or 6 uneven chunks (bursts; Q = 1), equals one call  (0)
-[21:15:50] PASS  fit_all through the pool branch of run_tasks equals fit_all without a pool  (1)
-[21:15:51] PASS  exp1_table.tex: 7 columns in the spec and every row; spans 4 + 2 over (RMSE, CRPS, cover, width) and (delay, RMSE); the header names the cells in their order  (0)
-[21:15:51] PASS  exp1_table.tex: a rule above the input-dependent, robust and Bayes groups and nowhere else  (0)
-[21:15:51] PASS  sweep tables: 8 columns, 'Tuned' over the four tuned filters and 'c = 2 fixed' over the two fixed ones; the weight table: 3 columns, its span over both  (0)
-[21:15:51] PASS  exp2_table.tex: 'T = ' header cells in T order, tolerance titles in TOLS order, the regimes' row names  (0)
-[21:15:52] PASS  figure 1(a): each legend entry is paired with the line it names  (0)
-[21:15:52] PASS  figure 1(a): the band is m +- Z90 sqrt(P) of the robust filter; up markers at the top for readings above the axis, down markers at the bottom; no tick in the edge strips  (0)
-[21:15:52] PASS  figure 1(b)/(c): each legend entry is the line with that label, all seven present; the dotted connector runs from c = 15 to the c = inf point  (0)
-[21:15:52] PASS  figure 2: (b) and (c) show each regime's median passes at their own tolerance, at T up to the dodge; (a) shows the c = C2 runs' median errors  (0)
-[21:15:52] PASS  figures: 1(a)'s legend below the x-axis label, its input-dependent entry 'tuned'; the tuned-c diamond as large as the square; figure 2's regimes dodged apart, their markers drawn again on top, diamonds shrunk  (0)
-[21:15:52] PASS  experiment 2: Memory is the median of a_{t+1} (1 - K_t), as exp2_table.txt says, and Factor the median of the per-sequence factors over the sequences that have one  (0)
-[21:15:53] PASS  experiment 2: when no sequence converges, the practical-rule lines say n/a and count them  (1)
-[21:15:53] PASS  fitted_text: each filter's R, c and k in its own place, also with one kind of noise on and the other off; 'inf (off)' and '- (not used)' when off  (0)
-[21:15:54] PASS  exp1_table.txt: each stability line shows its refit's R, c and k, and each filter's RMSE / delay  (0)
-[21:15:54] PASS  exp1_table.txt: the trade-off table has c, R, RMSE, CRPS, 90% cover and delay of every point  (0)
-[21:15:54] PASS  exp1_results.json: every filter's own bootstrap delays and per-sequence values  (0)
-[21:15:54] PASS  notes: all nine, each with its claim; the counts and step windows of the configuration; the Bayes note on bursts only under the sweep; the combined filter's weight bound holds  (0)
-[21:15:54] PASS  sweep: every setting's block, the sweep notes (with the Bayes note on bursts), and the RMSE, delay and weight tables of every setting  (1)
-[21:15:54] PASS  labels and the docstring name the fixed c and k that the code uses (C_PRIOR, K_PRIOR)  (1)
-[21:15:55] PASS  grid Bayes filter equals the Kalman filter on clean readings swinging +-6 for 100 steps (Q = 0.1, 1)  (4.72e-08)
-[21:15:55] PASS  run_info.json records the SHA-256 of this script  (10095aecf4bb)
-[21:15:55] PASS  the two worker-process checks are SKIP exactly when there are no worker processes  (1)
-[21:15:55] all 161 self-checks passed
-[21:15:55] experiment 1: main scenario
-[21:26:15]   tuning stability 1/5 done
-[21:31:16]   tuning stability 2/5 done
-[21:36:12]   tuning stability 3/5 done
-[21:41:07]   tuning stability 4/5 done
-[21:46:03]   tuning stability 5/5 done
-[21:46:04] experiment 1 written: exp1_table.txt/.tex, exp1_figure.pdf/.png
-[21:46:04] experiment 2: a_t <= 0.6, T = 100, c = 2: passes to 1% sd 3.5 (5), to 1e-8 sd 7 (9) [0s]
-[21:46:04] experiment 2: a_t <= 0.6, T = 1000, c = 2: passes to 1% sd 4 (5), to 1e-8 sd 9 (10) [0s]
-[21:46:04] experiment 2: a_t <= 0.6, T = 1000, c = 1: passes to 1% sd 5 (5), to 1e-8 sd 11 (12) [0s]
-[21:46:06] experiment 2: a_t <= 0.6, T = 10000, c = 2: passes to 1% sd 5 (5), to 1e-8 sd 10 (11) [1s]
-[21:46:06] experiment 2: a_t ~ 0.5, T = 100, c = 2: passes to 1% sd 4 (5), to 1e-8 sd 8 (11) [0s]
-[21:46:06] experiment 2: a_t ~ 0.5, T = 1000, c = 2: passes to 1% sd 5 (6), to 1e-8 sd 10 (12) [0s]
-[21:46:06] experiment 2: a_t ~ 0.5, T = 1000, c = 1: passes to 1% sd 5.5 (7), to 1e-8 sd 13 (15) [0s]
-[21:46:07] experiment 2: a_t ~ 0.5, T = 10000, c = 2: passes to 1% sd 5.5 (6), to 1e-8 sd 12 (13) [1s]
-[21:46:07] experiment 2: a_t ~ 0.9, T = 100, c = 2: passes to 1% sd 5 (6), to 1e-8 sd 11 (14) [0s]
-[21:46:08] experiment 2: a_t ~ 0.9, T = 1000, c = 2: passes to 1% sd 6 (6), to 1e-8 sd 13 (15) [0s]
-[21:46:08] experiment 2: a_t ~ 0.9, T = 1000, c = 1: passes to 1% sd 7 (8), to 1e-8 sd 18 (21) [0s]
-[21:46:10] experiment 2: a_t ~ 0.9, T = 10000, c = 2: passes to 1% sd 6.5 (7), to 1e-8 sd 14 (16) [2s]
-[21:46:10] experiment 2: a_t ~ 0.99, T = 100, c = 2: passes to 1% sd 5 (6), to 1e-8 sd 13 (15) [0s]
-[21:46:10] experiment 2: a_t ~ 0.99, T = 1000, c = 2: passes to 1% sd 6 (7), to 1e-8 sd 15 (17) [0s]
-[21:46:10] experiment 2: a_t ~ 0.99, T = 1000, c = 1: passes to 1% sd 8 (9), to 1e-8 sd 23 (26) [0s]
-[21:46:12] experiment 2: a_t ~ 0.99, T = 10000, c = 2: passes to 1% sd 6 (7), to 1e-8 sd 16 (17) [2s]
-[21:46:12] experiment 2: a_t ~ 0.999, T = 100, c = 2: passes to 1% sd 4.5 (6), to 1e-8 sd 12.5 (15) [0s]
-[21:46:12] experiment 2: a_t ~ 0.999, T = 1000, c = 2: passes to 1% sd 6 (6), to 1e-8 sd 15 (16) [0s]
-[21:46:12] experiment 2: a_t ~ 0.999, T = 1000, c = 1: passes to 1% sd 8.5 (9), to 1e-8 sd 24.5 (27) [0s]
-[21:46:14] experiment 2: a_t ~ 0.999, T = 10000, c = 2: passes to 1% sd 6 (7), to 1e-8 sd 16 (17) [2s]
-[21:46:14] experiment 2: random walk, T = 100, c = 2: passes to 1% sd 6 (6), to 1e-8 sd 13 (17) [0s]
-[21:46:14] experiment 2: random walk, T = 1000, c = 2: passes to 1% sd 6.5 (8), to 1e-8 sd 14 (16) [0s]
-[21:46:14] experiment 2: random walk, T = 1000, c = 1: passes to 1% sd 8 (10), to 1e-8 sd 21 (24) [0s]
-[21:46:16] experiment 2: random walk, T = 10000, c = 2: passes to 1% sd 7 (8), to 1e-8 sd 15.5 (17) [2s]
-[21:46:17] experiment 2 written: exp2_table.txt/.tex, exp2_figure.pdf/.png
-[21:46:17] sweep: main: 10% outliers, sd 10
-[21:46:17] sweep: clean data
-[21:51:22] sweep: rare outliers: 5%, sd 10
-[21:56:31] sweep: frequent outliers: 20%, sd 10
-[22:01:52] sweep: frequent mild outliers: 20%, sd 3
-[22:07:07] sweep: huge outliers: 10%, sd 32
-[22:12:32] sweep: outliers at test time only: 10%, sd 10
-[22:17:46] sweep: outlier bursts: 10%, sd 10, mean run 5
-[22:23:04] sweep: fast-moving state: Q = 1, 10% outliers, sd 10
-[22:28:46] sweep written: sweep.txt, sweep_rmse_table.tex (RMSE before the jump), sweep_delay_table.tex, sweep_weight_table.tex (the robust weight added to each kind of input-dependent noise)
-[22:28:47] finished in 74.6 minutes
+[03:49:45] PASS  tests/test_bayes.py::test_grid_filter_equals_exact_enumeration_of_outlier_patterns[independent outliers-0.3-None]
+[03:49:45] PASS  tests/test_bayes.py::test_grid_filter_equals_exact_enumeration_of_outlier_patterns[bursty outliers-0.3-0.8]
+[03:49:45] PASS  tests/test_bayes.py::test_grid_filter_equals_exact_enumeration_of_outlier_patterns[a real jump of 5 at step 6-0.1-None]
+[03:49:45] PASS  tests/test_bayes.py::test_grid_filter_equals_the_kalman_filter_on_clean_data_with_a_jump[0.1]
+[03:49:45] PASS  tests/test_bayes.py::test_grid_filter_equals_the_kalman_filter_on_clean_data_with_a_jump[1.0]
+[03:49:45] PASS  tests/test_bayes.py::test_widening_the_grid_to_40_changes_no_score[Q=0.1]
+[03:49:45] PASS  tests/test_bayes.py::test_widening_the_grid_to_40_changes_no_score[Q=0.1, bursts]
+[03:49:45] PASS  tests/test_bayes.py::test_widening_the_grid_to_40_changes_no_score[Q=1]
+[03:49:45] PASS  tests/test_bayes.py::test_grid_filter_renormalises_over_many_steps
+[03:49:45] PASS  tests/test_experiments.py::test_run_scenario_is_fitted_on_the_jump_free_training_and_validation_data[6]
+[03:49:45] PASS  tests/test_experiments.py::test_run_scenario_is_fitted_on_the_jump_free_training_and_validation_data[7]
+[03:49:45] PASS  tests/test_experiments.py::test_run_scenario_rows_equal_their_filters_rebuilt_from_the_documented_parts[6]
+[03:49:45] PASS  tests/test_experiments.py::test_run_scenario_rows_equal_their_filters_rebuilt_from_the_documented_parts[7]
+[03:49:45] PASS  tests/test_experiments.py::test_tradeoff_curve_has_a_point_for_every_c_with_the_R_tuned_for_that_c
+[03:49:45] PASS  tests/test_experiments.py::test_tradeoff_curve_inf_point_is_the_one_R_forecast_crps_row
+[03:49:45] PASS  tests/test_experiments.py::test_tuning_stability_rows_are_the_refits_rebuilt
+[03:49:45] PASS  tests/test_experiments.py::test_tuning_stability_refits_differ_from_each_other_and_from_the_main_fit
+[03:49:45] PASS  tests/test_experiments.py::test_exp2_memory_and_factor_are_the_medians_of_the_recomputed_counts
+[03:49:45] PASS  tests/test_experiments.py::test_exp2_practical_rule_lines_say_n_a_when_nothing_converges
+[03:49:45] PASS  tests/test_figures.py::test_figure_1_shows_the_values_of_the_small_run
+[03:49:45] PASS  tests/test_figures.py::test_figure_1a_pairs_each_legend_entry_with_the_line_it_names
+[03:49:45] PASS  tests/test_figures.py::test_figure_1a_band_edge_markers_and_ticks
+[03:49:45] PASS  tests/test_figures.py::test_figure_1bc_legend_entries_and_the_dotted_connector
+[03:49:45] PASS  tests/test_figures.py::test_figure_2_shows_each_regimes_median_passes_and_errors
+[03:49:45] PASS  tests/test_figures.py::test_figures_keep_their_details_legible
+[03:49:45] PASS  tests/test_filters.py::test_imq_weight_at_one_predictive_sd
+[03:49:45] PASS  tests/test_filters.py::test_kalman_filter_equals_exact_gaussian_conditioning[one R]
+[03:49:45] PASS  tests/test_filters.py::test_kalman_filter_equals_exact_gaussian_conditioning[R_t in the update]
+[03:49:45] PASS  tests/test_filters.py::test_robust_filter_equals_an_information_form_update[one R]
+[03:49:45] PASS  tests/test_filters.py::test_robust_filter_equals_an_information_form_update[R_t]
+[03:49:45] PASS  tests/test_filters.py::test_robust_filter_with_c_inf_is_the_kalman_filter
+[03:49:45] PASS  tests/test_filters.py::test_robust_filter_with_c_1e9_is_within_1e_9_of_the_kalman_filter
+[03:49:45] PASS  tests/test_filters.py::test_kalman_predictive_variance_reaches_the_steady_state
+[03:49:45] PASS  tests/test_filters.py::test_local_distance2_equals_a_direct_loop
+[03:49:45] PASS  tests/test_filters.py::test_past_distance2_equals_a_direct_loop
+[03:49:45] PASS  tests/test_filters.py::test_past_distance2_never_uses_the_current_reading
+[03:49:45] PASS  tests/test_metrics.py::test_closed_form_gaussian_crps_matches_monte_carlo
+[03:49:45] PASS  tests/test_metrics.py::test_calibrated_gaussian_has_90_percent_coverage
+[03:49:45] PASS  tests/test_metrics.py::test_calibrated_gaussian_has_50_percent_coverage
+[03:49:45] PASS  tests/test_metrics.py::test_calibrated_gaussian_rmse_is_the_sd
+[03:49:45] PASS  tests/test_metrics.py::test_summarise_uses_only_the_steps_before_the_jump_for_accuracy_and_calibration
+[03:49:45] PASS  tests/test_metrics.py::test_summarise_post_jump_rmse_covers_exactly_the_after_steps_from_the_jump_on
+[03:49:45] PASS  tests/test_metrics.py::test_summarise_delay_comes_from_the_mean_signed_error
+[03:49:45] PASS  tests/test_metrics.py::test_summarise_interval_half_width_is_196_sd_over_sqrt_n
+[03:49:45] PASS  tests/test_parallel.py::test_bayes_filter_split_across_worker_processes_equals_one_call
+[03:49:45] PASS  tests/test_parallel.py::test_fit_all_in_worker_processes_equals_fit_all_in_one_process
+[03:49:45] PASS  tests/test_parallel.py::test_bayes_filter_through_a_stand_in_pool_equals_one_call[2-0.1-None-61]
+[03:49:45] PASS  tests/test_parallel.py::test_bayes_filter_through_a_stand_in_pool_equals_one_call[3-0.1-0.8-62]
+[03:49:45] PASS  tests/test_parallel.py::test_bayes_filter_through_a_stand_in_pool_equals_one_call[3-1.0-None-63]
+[03:49:45] PASS  tests/test_parallel.py::test_bayes_filter_through_a_stand_in_pool_equals_one_call[6-0.1-0.8-64]
+[03:49:45] PASS  tests/test_parallel.py::test_fit_all_through_the_pool_branch_of_run_tasks_equals_fit_all_without_a_pool
+[03:49:45] PASS  tests/test_passes.py::test_pass_1_is_the_ordinary_kalman_filter
+[03:49:45] PASS  tests/test_passes.py::test_after_k_passes_the_first_k_minus_1_means_are_exact
+[03:49:45] PASS  tests/test_passes.py::test_after_k_passes_the_kth_mean_is_not_yet_exact
+[03:49:45] PASS  tests/test_passes.py::test_T_plus_1_passes_give_the_sequential_robust_filter_exactly
+[03:49:45] PASS  tests/test_passes.py::test_count_passes_error_after_each_pass_equals_an_independent_iteration
+[03:49:45] PASS  tests/test_passes.py::test_count_passes_counts_equal_the_independent_ones
+[03:49:45] PASS  tests/test_passes.py::test_count_passes_contraction_factor
+[03:49:45] PASS  tests/test_passes.py::test_count_passes_memory_is_a_times_1_minus_K_of_the_sequential_filter
+[03:49:45] PASS  tests/test_passes.py::test_count_passes_memory_is_the_effect_of_one_prediction_on_the_next
+[03:49:45] PASS  tests/test_record.py::test_run_info_records_the_sha256_of_every_source_file
+[03:49:45] PASS  tests/test_record.py::test_the_pool_tests_are_skipped_exactly_when_there_are_no_worker_processes
+[03:49:45] PASS  tests/test_simulate.py::test_outlier_rate_is_10_percent
+[03:49:45] PASS  tests/test_simulate.py::test_clean_noise_variance_is_R
+[03:49:45] PASS  tests/test_simulate.py::test_outlier_noise_variance_is_100_R
+[03:49:45] PASS  tests/test_simulate.py::test_jump_is_5_from_step_501_on_and_absent_before
+[03:49:45] PASS  tests/test_simulate.py::test_random_walk_step_variance_is_Q
+[03:49:45] PASS  tests/test_simulate.py::test_bursty_outlier_rate_is_10_percent
+[03:49:45] PASS  tests/test_simulate.py::test_bursty_outliers_have_mean_run_length_5
+[03:49:45] PASS  tests/test_simulate.py::test_bursty_outlier_rate_is_10_percent_at_each_of_the_first_four_steps
+[03:49:45] PASS  tests/test_simulate.py::test_decaying_state_keeps_variance_sigma2
+[03:49:45] PASS  tests/test_simulate.py::test_median_decay_is_a_med
+[03:49:45] PASS  tests/test_simulate.py::test_input_is_stationary_with_sd_075
+[03:49:45] PASS  tests/test_simulate.py::test_decaying_state_observation_noise_variance
+[03:49:45] PASS  tests/test_simulate.py::test_capped_decay_never_exceeds_the_cap
+[03:49:45] PASS  tests/test_tables.py::test_scenario_text_paired_lines_are_the_seven_documented_comparisons_in_order
+[03:49:45] PASS  tests/test_tables.py::test_scenario_text_paired_lines_are_first_minus_second
+[03:49:45] PASS  tests/test_tables.py::test_scenario_text_post_jump_column_names_its_window
+[03:49:45] PASS  tests/test_tables.py::test_signed_prints_a_value_that_rounds_to_zero_as_plus_zero
+[03:49:45] PASS  tests/test_tables.py::test_exp1_tex_has_every_filter_in_order_with_its_label_and_metrics
+[03:49:45] PASS  tests/test_tables.py::test_sweep_tables_have_the_documented_columns_and_row_labels_that_describe_their_settings
+[03:49:45] PASS  tests/test_tables.py::test_sweep_weight_table_shows_each_settings_rmse_change_from_adding_the_weight
+[03:49:45] PASS  tests/test_tables.py::test_exp1_tex_layout
+[03:49:45] PASS  tests/test_tables.py::test_exp1_tex_has_a_rule_above_the_input_dependent_robust_and_bayes_groups_and_nowhere_else
+[03:49:45] PASS  tests/test_tables.py::test_sweep_tex_layout
+[03:49:45] PASS  tests/test_tables.py::test_fitted_text_puts_each_filters_parameters_in_its_own_place
+[03:49:45] PASS  tests/test_tables.py::test_exp1_text_stability_lines_show_each_refit_and_each_filters_rmse_and_delay
+[03:49:46] PASS  tests/test_tables.py::test_exp1_text_tradeoff_table_has_every_point
+[03:49:46] PASS  tests/test_tables.py::test_exp1_results_json_has_every_filters_own_bootstrap_delays_and_per_sequence_values
+[03:49:46] PASS  tests/test_tables.py::test_notes_state_their_claims_with_the_counts_and_windows_of_the_configuration
+[03:49:46] PASS  tests/test_tables.py::test_sweep_writes_every_settings_block_the_notes_and_the_three_tables
+[03:49:46] PASS  tests/test_tables.py::test_labels_and_the_docstring_name_the_fixed_c_and_k_that_the_code_uses
+[03:49:46] PASS  tests/test_tables.py::test_exp2_practical_rule_line_is_the_median_and_max_of_the_extra_passes
+[03:49:46] PASS  tests/test_tables.py::test_exp2_tex_cells_equal_the_saved_results
+[03:49:46] PASS  tests/test_tables.py::test_exp2_tex_layout
+[03:49:46] PASS  tests/test_tuning.py::test_one_R_ml_maximises_the_training_likelihood[104]
+[03:49:46] PASS  tests/test_tuning.py::test_one_R_ml_maximises_the_training_likelihood[231]
+[03:49:46] PASS  tests/test_tuning.py::test_one_R_ml_maximises_the_training_likelihood[302]
+[03:49:46] PASS  tests/test_tuning.py::test_one_R_forecast_minimises_the_forecast_crps[104]
+[03:49:46] PASS  tests/test_tuning.py::test_one_R_forecast_minimises_the_forecast_crps[231]
+[03:49:46] PASS  tests/test_tuning.py::test_one_R_forecast_minimises_the_forecast_crps[302]
+[03:49:46] PASS  tests/test_tuning.py::test_robust_R_and_c_minimise_the_forecast_crps[104]
+[03:49:46] PASS  tests/test_tuning.py::test_robust_R_and_c_minimise_the_forecast_crps[231]
+[03:49:46] PASS  tests/test_tuning.py::test_robust_R_and_c_minimise_the_forecast_crps[302]
+[03:49:46] PASS  tests/test_tuning.py::test_the_R_kept_for_every_c_is_the_best_R_for_that_c[104]
+[03:49:46] PASS  tests/test_tuning.py::test_the_R_kept_for_every_c_is_the_best_R_for_that_c[231]
+[03:49:46] PASS  tests/test_tuning.py::test_the_R_kept_for_every_c_is_the_best_R_for_that_c[302]
+[03:49:46] PASS  tests/test_tuning.py::test_robust_filter_with_fixed_c_gets_the_best_R_for_that_c[104]
+[03:49:46] PASS  tests/test_tuning.py::test_robust_filter_with_fixed_c_gets_the_best_R_for_that_c[231]
+[03:49:46] PASS  tests/test_tuning.py::test_robust_filter_with_fixed_c_gets_the_best_R_for_that_c[302]
+[03:49:46] PASS  tests/test_tuning.py::test_input_dependent_R_c_k_minimise_the_forecast_crps[104]
+[03:49:46] PASS  tests/test_tuning.py::test_input_dependent_R_c_k_minimise_the_forecast_crps[231]
+[03:49:46] PASS  tests/test_tuning.py::test_input_dependent_R_c_k_minimise_the_forecast_crps[302]
+[03:49:46] PASS  tests/test_tuning.py::test_input_dependent_filter_with_c_and_k_fixed_gets_its_best_R[104]
+[03:49:46] PASS  tests/test_tuning.py::test_input_dependent_filter_with_c_and_k_fixed_gets_its_best_R[231]
+[03:49:46] PASS  tests/test_tuning.py::test_input_dependent_filter_with_c_and_k_fixed_gets_its_best_R[302]
+[03:49:46] PASS  tests/test_tuning.py::test_robust_plus_input_dependent_minimises_the_forecast_crps_over_the_whole_grid[104]
+[03:49:46] PASS  tests/test_tuning.py::test_robust_plus_input_dependent_minimises_the_forecast_crps_over_the_whole_grid[231]
+[03:49:46] PASS  tests/test_tuning.py::test_robust_plus_input_dependent_minimises_the_forecast_crps_over_the_whole_grid[302]
+[03:49:46] PASS  tests/test_tuning.py::test_past_only_input_dependent_R_c_k_minimise_the_forecast_crps[104]
+[03:49:46] PASS  tests/test_tuning.py::test_past_only_input_dependent_R_c_k_minimise_the_forecast_crps[231]
+[03:49:46] PASS  tests/test_tuning.py::test_past_only_input_dependent_R_c_k_minimise_the_forecast_crps[302]
+[03:49:46] PASS  tests/test_tuning.py::test_past_only_robust_plus_input_dependent_minimises_the_forecast_crps_over_the_whole_grid[104]
+[03:49:46] PASS  tests/test_tuning.py::test_past_only_robust_plus_input_dependent_minimises_the_forecast_crps_over_the_whole_grid[231]
+[03:49:46] PASS  tests/test_tuning.py::test_past_only_robust_plus_input_dependent_minimises_the_forecast_crps_over_the_whole_grid[302]
+[03:49:46] PASS  tests/test_tuning.py::test_k_is_none_exactly_when_the_noise_c_is_inf[104]
+[03:49:46] PASS  tests/test_tuning.py::test_k_is_none_exactly_when_the_noise_c_is_inf[231]
+[03:49:46] PASS  tests/test_tuning.py::test_k_is_none_exactly_when_the_noise_c_is_inf[302]
+[03:49:46] PASS  tests/test_tuning.py::test_the_data_of_seed_231_tell_the_fits_apart
+[03:49:46] PASS  tests/test_tuning.py::test_with_bursts_the_past_only_noise_is_used_alone_and_with_the_weight
+[03:49:46] PASS  tests/test_tuning.py::test_maximum_likelihood_on_clean_data_learns_R_within_one_grid_step
+[03:49:46] PASS  tests/test_tuning.py::test_filter_specs_gives_each_filter_its_own_parameters
+[03:49:46] PASS  tests/test_tuning.py::test_filter_specs_noise_c_inf_gives_R_t_equal_to_R_exactly
+[03:49:46] PASS  tests/test_tuning.py::test_fit_all_on_fabricated_tables_makes_every_choice_as_brute_force[noise off, robust on]
+[03:49:46] PASS  tests/test_tuning.py::test_fit_all_on_fabricated_tables_makes_every_choice_as_brute_force[noise on, robust off]
+[03:49:46] PASS  tests/test_tuning.py::test_fit_all_on_fabricated_tables_makes_every_choice_as_brute_force[both on]
+[03:49:46] PASS  tests/test_tuning.py::test_fit_all_on_fabricated_tables_makes_every_choice_as_brute_force[everything off]
+[03:49:46] PASS  tests/test_tuning.py::test_fit_all_on_fabricated_tables_k_is_none_exactly_when_the_noise_c_is_inf[noise off, robust on]
+[03:49:46] PASS  tests/test_tuning.py::test_fit_all_on_fabricated_tables_k_is_none_exactly_when_the_noise_c_is_inf[noise on, robust off]
+[03:49:46] PASS  tests/test_tuning.py::test_fit_all_on_fabricated_tables_k_is_none_exactly_when_the_noise_c_is_inf[both on]
+[03:49:46] PASS  tests/test_tuning.py::test_fit_all_on_fabricated_tables_k_is_none_exactly_when_the_noise_c_is_inf[everything off]
+[03:49:46] PASS  tests/test_tuning.py::test_the_fabricated_tables_put_the_best_entry_on_each_edge_of_the_search
+[03:49:46] PASS  tests/test_tuning.py::test_best_over_breaks_ties_by_the_first_parameter_and_the_first_R
+[03:49:46] all 143 tests passed
+[03:49:46] experiment 1: main scenario
+[03:59:20]   tuning stability 1/5 done
+[04:03:52]   tuning stability 2/5 done
+[04:08:28]   tuning stability 3/5 done
+[04:13:00]   tuning stability 4/5 done
+[04:17:33]   tuning stability 5/5 done
+[04:17:34] experiment 1 written: exp1_table.txt/.tex, exp1_figure.pdf/.png
+[04:17:34] experiment 2: a_t <= 0.6, T = 100, c = 2: passes to 1% sd 3.5 (5), to 1e-8 sd 7 (9) [0s]
+[04:17:34] experiment 2: a_t <= 0.6, T = 1000, c = 2: passes to 1% sd 4 (5), to 1e-8 sd 9 (10) [0s]
+[04:17:34] experiment 2: a_t <= 0.6, T = 1000, c = 1: passes to 1% sd 5 (5), to 1e-8 sd 11 (12) [0s]
+[04:17:35] experiment 2: a_t <= 0.6, T = 10000, c = 2: passes to 1% sd 5 (5), to 1e-8 sd 10 (11) [1s]
+[04:17:35] experiment 2: a_t ~ 0.5, T = 100, c = 2: passes to 1% sd 4 (5), to 1e-8 sd 8 (11) [0s]
+[04:17:36] experiment 2: a_t ~ 0.5, T = 1000, c = 2: passes to 1% sd 5 (6), to 1e-8 sd 10 (12) [0s]
+[04:17:36] experiment 2: a_t ~ 0.5, T = 1000, c = 1: passes to 1% sd 5.5 (7), to 1e-8 sd 13 (15) [0s]
+[04:17:37] experiment 2: a_t ~ 0.5, T = 10000, c = 2: passes to 1% sd 5.5 (6), to 1e-8 sd 12 (13) [1s]
+[04:17:37] experiment 2: a_t ~ 0.9, T = 100, c = 2: passes to 1% sd 5 (6), to 1e-8 sd 11 (14) [0s]
+[04:17:37] experiment 2: a_t ~ 0.9, T = 1000, c = 2: passes to 1% sd 6 (6), to 1e-8 sd 13 (15) [0s]
+[04:17:38] experiment 2: a_t ~ 0.9, T = 1000, c = 1: passes to 1% sd 7 (8), to 1e-8 sd 18 (21) [0s]
+[04:17:39] experiment 2: a_t ~ 0.9, T = 10000, c = 2: passes to 1% sd 6.5 (7), to 1e-8 sd 14 (16) [2s]
+[04:17:39] experiment 2: a_t ~ 0.99, T = 100, c = 2: passes to 1% sd 5 (6), to 1e-8 sd 13 (15) [0s]
+[04:17:39] experiment 2: a_t ~ 0.99, T = 1000, c = 2: passes to 1% sd 6 (7), to 1e-8 sd 15 (17) [0s]
+[04:17:40] experiment 2: a_t ~ 0.99, T = 1000, c = 1: passes to 1% sd 8 (9), to 1e-8 sd 23 (26) [0s]
+[04:17:41] experiment 2: a_t ~ 0.99, T = 10000, c = 2: passes to 1% sd 6 (7), to 1e-8 sd 16 (17) [2s]
+[04:17:41] experiment 2: a_t ~ 0.999, T = 100, c = 2: passes to 1% sd 4.5 (6), to 1e-8 sd 12.5 (15) [0s]
+[04:17:42] experiment 2: a_t ~ 0.999, T = 1000, c = 2: passes to 1% sd 6 (6), to 1e-8 sd 15 (16) [0s]
+[04:17:42] experiment 2: a_t ~ 0.999, T = 1000, c = 1: passes to 1% sd 8.5 (9), to 1e-8 sd 24.5 (27) [0s]
+[04:17:44] experiment 2: a_t ~ 0.999, T = 10000, c = 2: passes to 1% sd 6 (7), to 1e-8 sd 16 (17) [2s]
+[04:17:44] experiment 2: random walk, T = 100, c = 2: passes to 1% sd 6 (6), to 1e-8 sd 13 (17) [0s]
+[04:17:44] experiment 2: random walk, T = 1000, c = 2: passes to 1% sd 6.5 (8), to 1e-8 sd 14 (16) [0s]
+[04:17:44] experiment 2: random walk, T = 1000, c = 1: passes to 1% sd 8 (10), to 1e-8 sd 21 (24) [0s]
+[04:17:46] experiment 2: random walk, T = 10000, c = 2: passes to 1% sd 7 (8), to 1e-8 sd 15.5 (17) [2s]
+[04:17:47] experiment 2 written: exp2_table.txt/.tex, exp2_figure.pdf/.png
+[04:17:47] sweep: main: 10% outliers, sd 10
+[04:17:47] sweep: clean data
+[04:22:33] sweep: rare outliers: 5%, sd 10
+[04:27:20] sweep: frequent outliers: 20%, sd 10
+[04:32:24] sweep: frequent mild outliers: 20%, sd 3
+[04:37:13] sweep: huge outliers: 10%, sd 32
+[04:42:07] sweep: outliers at test time only: 10%, sd 10
+[04:46:52] sweep: outlier bursts: 10%, sd 10, mean run 5
+[04:51:43] sweep: fast-moving state: Q = 1, 10% outliers, sd 10
+[04:57:04] sweep written: sweep.txt, sweep_rmse_table.tex (RMSE before the jump), sweep_delay_table.tex, sweep_weight_table.tex (the robust weight added to each kind of input-dependent noise)
+[04:57:04] finished in 69.0 minutes
